@@ -1,45 +1,49 @@
 package hierarchy;
 
 public class Appliances {
-    private Double cost;
     private String type;
     private String manufacter;
+    private double size;
 
-    public void setCost(Double cost) {
-        if (cost<=0){
-            System.out.println("Цена отрицательная");
-        } else{
-            this.cost = cost;
-        }
-    }
-    public Double getCost() {
-        return cost;
-    }
-    Appliances(){
-    this.cost = 1.;
-    this.type = "";
-    this.manufacter = "";
-    }
-    Appliances(double cost,String type,String manufacter){
-        setCost(cost);
+    public void Appliances(String type, String manufacter, double size) {
         this.type = type;
         this.manufacter = manufacter;
+        this.setSize(size);
+    }
 
-    }
-    public void setType(String type){
-        this.type = type;
-    }
-    public String getType(){
+    public String getType() {
         return type;
     }
-    public void setManufacter(String manufacter){
-        this.manufacter = manufacter;
-    }
-    public String getManufacter(){
-        return manufacter;
-    }
-    public String getDiscription(){
-        return "Цена" + cost + "Тип товара" + type + "Производитель" + manufacter;
+
+    public void setType(String type) {
+        this.type = type;
     }
 
+    public String getManufacter() {
+        return manufacter;
+    }
+
+    public void setManufacter(String manufacter) {
+        this.manufacter = manufacter;
+    }
+
+    public double getSize() {
+        return size;
+    }
+
+    public void setSize(double size) {
+        if (size <= 0) {
+            System.out.println("Число задано неверно");
+        } else {
+            this.size = size;
+        }
+    }
+
+    public String toString() {
+        return "Тип товара" + type + "Производитель" + manufacter + "Размер" + getSize();
+    }
+
+    public void Description() {
+        System.out.println(toString() + "");
+    }
 }
