@@ -1,9 +1,15 @@
 package hierarchy;
 
-public class Appliances {
+public abstract class Appliances {
     private String type;
     private String manufacter;
     private double size;
+    String description = "Unknown appliances";
+
+    public String getDescription() {
+        return description;
+    }
+    public abstract double cost();
 
     public void Appliances(String type, String manufacter, double size) {
         this.type = type;
@@ -40,10 +46,11 @@ public class Appliances {
     }
 
     public String toString() {
-        return "Тип товара" + type + "Производитель" + manufacter + "Размер" + getSize();
+        return "Тип товара - " + type + " Производитель - " + manufacter + " Размер - " + getSize();
     }
 
-    public void Description() {
+    public Object Description() {
         System.out.println(toString() + "");
+        return null;
     }
 }

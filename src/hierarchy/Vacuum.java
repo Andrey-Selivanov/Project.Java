@@ -1,14 +1,21 @@
 package hierarchy;
 
 public class Vacuum extends Appliances {
-    private  String species;
+    private String species;
 
-    Vacuum (String type, String manufacter, double size, String species) {
+    Vacuum(String type, String manufacter, double size, String species) {
         super.Appliances(type, manufacter, size);
         this.species = species;
     }
-    @Override
-    public void Description() {
-        System.out.println(toString() + " Вид пылесоса " + species);
+
+    public double cost() {
+        return 20.1;
     }
+
+    @Override
+    public Object Description() {
+        System.out.println(toString() + " Вид пылесоса " + species);
+        return null;
+    }
+
 }

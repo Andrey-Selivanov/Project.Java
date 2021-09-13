@@ -14,11 +14,15 @@ public class Fridge extends Appliances{
             this.height = height;
         }
         else {
-            System.out.println("Высота отрицательная");
+            System.out.println(" Высота отрицательная");
         }
     }
+    public double cost() {
+        return 15.5;
+    }
     @Override
-    public void Description() {
-        System.out.println(toString() + "Высота стенок - " + height);
+    public Object Description() {
+        System.out.println(toString() + " Высота стенок - " + height);
+        return null;
     }
 }
